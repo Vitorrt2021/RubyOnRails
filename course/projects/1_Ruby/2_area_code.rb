@@ -19,6 +19,7 @@ def get_area_code(hash,keyIs)
             return "The area code for #{key} is #{value}" 
         end
     end
+    return false
 end
 
 while true
@@ -32,7 +33,12 @@ while true
         puts get_city_name(dial_book)
 
         city = gets.chomp().downcase
-        puts get_area_code(dial_book,city)        
+        city_code =  get_area_code(dial_book,city)        
+        if city_code
+            puts city_code
+        else 
+            puts 'Don\'t have city with this name'
+        end
     else
         break
     end

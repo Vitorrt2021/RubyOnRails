@@ -13,5 +13,5 @@ if !true
 elsif true
     puts 'elsif its true'
 else
-    puts 'else its it '
+    puts 'else its it'
 end
