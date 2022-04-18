@@ -1,4 +1,10 @@
+<p>Go To Initial Page</p>
+<%= button_to 'Initial Page', articles_path, method: :get %>
+
+
 <h1> Article </h1>
 
 <p><strong>Title:</strong><%= @article.title %></p>
 <p><strong>Description:</strong><%= @article.description %></p>
+<br />
+<%= button_to 'Update', "/articles/#{@article.id}/edit", method: :get %>
