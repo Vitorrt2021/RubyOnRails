@@ -18,14 +18,14 @@
       <th scope="row"><%= row %></th>
       <td><%= article.title %></td>
       <td><%= article.description %></td>
-      <td><%= button_to 'Show', article_path(article.id), method: :get %></td>
-      <td><%= button_to 'Update', "/articles/#{article.id}/edit", method: :get %></td>
-      <td><%= button_to 'Delete', article_path(article.id), method: :delete %></td>
+      <td><%= button_to 'Show', article_path(article.id), method: :get,class:"btn btn-primary" %></td>
+      <td><%= button_to 'Update', "/articles/#{article.id}/edit", method: :get,class:"btn btn-warning" %></td>
+      <td><%= button_to 'Delete', article_path(article.id), method: :delete, class:"btn btn-danger" %></td>
     </tr>
     <% row += 1 %>
     <% end %>
   </tbody>
 </table>
 <p>Add a new article</p>
-<%= button_to 'ADD', new_article_path, method: :get %>
+<%= button_to 'Add', new_article_path, method: :get, class:"btn btn-success" %>
 
