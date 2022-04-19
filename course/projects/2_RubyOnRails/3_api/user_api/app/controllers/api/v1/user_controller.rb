@@ -2,17 +2,17 @@ require 'csv'
 
 class Api::V1::UserController < ApplicationController
   def index
-    content = CSV.read(file)
+    content = CSV.parse(File.read(file), headers: false,  skip_lines: /\n/)
     render json: content
   end
 
   def show
     id = params[:id]
-    content = CSV.read(file , headers: false)
+    content = CSV.parse(File.read(file), headers: true)
     content.each do |user|
-      debugger
-      if user[:id] == id  
+      if user['id'] == id  
         render json: user
+        return true
       end
     end
     
@@ -21,12 +21,12 @@ class Api::V1::UserController < ApplicationController
 
   def create
     user = user_params
-
-    CSV.open(file, "ab") do |csv|
-      csv << [user[:first_name], user[:last_name], user[:email], user[:password]]
+    new_user = [ new_id ,user[:first_name], user[:last_name], user[:email], user[:password]]
+    CSV.open(file, "a+") do |csv|
+      csv << new_user
     end
 
-    render json: "create user"
+    render json: new_user
   end
 
   private
@@ -39,4 +39,14 @@ class Api::V1::UserController < ApplicationController
     params.require(:user).permit(:first_name,:last_name,:email,:password) 
   end
 
+  def new_id
+    new_id = 0;
+    content = CSV.parse(File.read(file), headers: true)
+    content.each do |user|
+      if user['id'].to_i >= new_id  
+        new_id = user['id'].to_i
+      end
+    end
+    return new_id + 1
+  end    
 end
