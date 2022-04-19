@@ -1,28 +1,31 @@
 
 <h1>Articles listing page</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th colspan='3'>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @articles.each do |article| %>
-        <tr>
-            <td><%= article.title %></td>
-            <td><%= article.description %></td>
-            <td><%= button_to 'Show', article_path(article.id), method: :get %></td>
-            <td><%= button_to 'Update', "/articles/#{article.id}/edit", method: :get %></td>
-            <td><%= button_to 'Delete', article_path(article.id), method: :delete %></td>
-        </tr>
-        <% end %>
-
-    </tbody>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%
+    row = 1
+    @articles.each do |article| %>    
+    <tr>
+      <th scope="row"><%= row %></th>
+      <td><%= article.title %></td>
+      <td><%= article.description %></td>
+      <td><%= button_to 'Show', article_path(article.id), method: :get %></td>
+      <td><%= button_to 'Update', "/articles/#{article.id}/edit", method: :get %></td>
+      <td><%= button_to 'Delete', article_path(article.id), method: :delete %></td>
+    </tr>
+    <% row += 1 %>
+    <% end %>
+  </tbody>
 </table>
-<br />
 <p>Add a new article</p>
 <%= button_to 'ADD', new_article_path, method: :get %>
 
