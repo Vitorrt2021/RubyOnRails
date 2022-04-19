@@ -1,0 +1,805 @@
+  [1m[35m (32.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUserTable (20220419135023)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "user" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "password_diges" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220419135023"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (8.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-19 13:51:48.782751"], ["updated_at", "2022-04-19 13:51:48.782751"]]
+  [1m[36mTRANSACTION (13.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-04-19 10:57:42 -0300
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as */*
+  Rendering /var/lib/gems/2.7.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.7.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 34.2ms | Allocations: 674)
+Completed 200 OK in 389ms (Views: 135.5ms | ActiveRecord: 0.0ms | Allocations: 6383)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-04-19 10:58:49 -0300
+  
+ActionController::RoutingError (uninitialized constant Api::V1::UsersController
+Did you mean?  Api::V1::UserController):
+  
+Started GET "/" for ::1 at 2022-04-19 10:59:38 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.7.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.7.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 366)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 1093)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-04-19 10:59:44 -0300
+  
+ActionController::RoutingError (uninitialized constant Api::V1::UsersController
+Did you mean?  Api::V1::UserController):
+  
+Started GET "/api/v1/users" for ::1 at 2022-04-19 11:00:23 -0300
+  
+ActionController::RoutingError (uninitialized constant Api::V1::UsersController
+Did you mean?  Api::V1::UserController):
+  
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:00:31 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/user"):
+  
+Started GET "/api/v1/users" for ::1 at 2022-04-19 11:00:35 -0300
+  
+ActionController::RoutingError (uninitialized constant Api::V1::UsersController
+Did you mean?  Api::V1::UserController):
+  
+Started GET "/api/v1/users" for ::1 at 2022-04-19 11:00:47 -0300
+  
+ActionController::RoutingError (uninitialized constant Api::V1::UsersController
+Did you mean?  Api::V1::UserController):
+  
+Started GET "/api/v1/users" for ::1 at 2022-04-19 11:01:29 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users"):
+  
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:01:34 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 130)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-04-19 11:04:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users"):
+  
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:04:37 -0300
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:05:07 -0300
+  [1m[35m (12.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:06:33 -0300
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 25400ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 124845)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:07:41 -0300
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/user" for 127.0.0.1 at 2022-04-19 11:10:06 -0300
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UserController#index as HTML
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:12:09 -0300
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UserController#index as HTML
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:14:42 -0300
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:15:34 -0300
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/user" for 127.0.0.1 at 2022-04-19 11:17:22 -0300
+Started GET "/api/v1/user" for 127.0.0.1 at 2022-04-19 11:17:22 -0300
+  [1m[35m (9.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UserController#index as HTML
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 174154ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 215273)
+
+
+Completed 200 OK in 174179ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 216124)
+
+
+Started GET "/api/v1/user" for 127.0.0.1 at 2022-04-19 11:20:21 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 16997ms (Views: 0.3ms | Allocations: 69979)
+
+
+Started GET "/api/v1/user" for 127.0.0.1 at 2022-04-19 11:20:54 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 4ms (Allocations: 1932)
+
+
+  
+NameError (undefined local variable or method `csv' for #<Api::V1::UserController:0x0000000000fe60>
+Did you mean?  CSV):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:21:24 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 4ms (Allocations: 1926)
+
+
+  
+NameError (undefined local variable or method `csv' for #<Api::V1::UserController:0x000000000135b0>
+Did you mean?  CSV):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:21:36 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 4ms (Allocations: 1928)
+
+
+  
+NameError (undefined local variable or method `csv' for #<Api::V1::UserController:0x00000000016d00>
+Did you mean?  CSV):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:22:09 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 116)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - users.csv):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:22:24 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 116)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - ./users.csv):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:24:30 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 116)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - users.csv):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:24:55 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 116)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - users.csv):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:28:56 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 116)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - users):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:30:13 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 108)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - users.csv):
+  
+app/controllers/api/v1/user_controller.rb:5:in `read'
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:31:03 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 106)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - ./users.csv):
+  
+app/controllers/api/v1/user_controller.rb:5:in `read'
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:33:01 -0300
+  
+SyntaxError (/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:6: syntax error, unexpected local variable or method, expecting ')'
+    table = CSV.parse(File.read(file),...
+    ^~~~~
+):
+  
+app/controllers/api/v1/user_controller.rb:6: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/api/v1/user_controller.rb:6: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:33:19 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 111)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - /mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/csv/users.csv):
+  
+app/controllers/api/v1/user_controller.rb:6:in `read'
+app/controllers/api/v1/user_controller.rb:6:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:33:34 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 110)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - /mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/users.csv):
+  
+app/controllers/api/v1/user_controller.rb:6:in `read'
+app/controllers/api/v1/user_controller.rb:6:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:33:45 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 109)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - /mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/users.csv):
+  
+app/controllers/api/v1/user_controller.rb:6:in `read'
+app/controllers/api/v1/user_controller.rb:6:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:34:38 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 8ms (Views: 0.1ms | Allocations: 225)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:34:48 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 6ms (Views: 0.3ms | Allocations: 255)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:35:49 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 8ms (Views: 0.3ms | Allocations: 364)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:35:52 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 10ms (Views: 0.2ms | Allocations: 343)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:35:57 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 7ms (Views: 0.2ms | Allocations: 363)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:37:42 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 11ms (Views: 0.3ms | Allocations: 376)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:41:34 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 16ms (Views: 0.3ms | Allocations: 458)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:42:27 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user. Context: { controller: Api::V1::UserController, action: create, request: #<ActionDispatch::Request:0x00007f26d8867800>, params: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}, "controller"=>"api/v1/user", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 32232ms (Allocations: 73375)
+
+
+  
+NoMethodError (undefined method `first_name' for #<ActionController::Parameters {} permitted: true>):
+  
+app/controllers/api/v1/user_controller.rb:19:in `block in create'
+app/controllers/api/v1/user_controller.rb:18:in `create'
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:43:14 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 5671ms (Allocations: 68822)
+
+
+  
+NoMethodError (undefined method `first_name' for #<ActionController::Parameters:0x00007f26d859a7a8>):
+  
+app/controllers/api/v1/user_controller.rb:19:in `block in create'
+app/controllers/api/v1/user_controller.rb:18:in `create'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:44:20 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 9ms (Views: 0.4ms | Allocations: 286)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:44:34 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 47869ms (Allocations: 88845)
+
+
+  
+NoMethodError (undefined method `first_name' for #<ActionController::Parameters:0x00007f26ec9ed260>):
+  
+app/controllers/api/v1/user_controller.rb:19:in `block in create'
+app/controllers/api/v1/user_controller.rb:18:in `create'
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:45:32 -0300
+  
+SyntaxError (/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:20: syntax error, unexpected `end', expecting ']'
+    end
+    ^~~
+/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/api/v1/user_controller.rb:20: syntax error, unexpected `end', expecting ']'
+app/controllers/api/v1/user_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/user_controller.rb:20: syntax error, unexpected `end', expecting ']'
+app/controllers/api/v1/user_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:45:51 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 2579ms (Views: 0.3ms | Allocations: 65841)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:46:15 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 6ms (Views: 0.2ms | Allocations: 214)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:47:54 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 10ms (Views: 0.2ms | Allocations: 214)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:48:06 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 500 Internal Server Error in 4ms (Allocations: 259)
+
+
+  
+CSV::MalformedCSVError (Unquoted fields do not allow new line <"\n"> in line 3.):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:48:45 -0300
+  
+SyntaxError (/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:18: syntax error, unexpected backslash
+      csv << \n,[user[:first_name], user[:l...
+             ^
+/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:18: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:34: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/api/v1/user_controller.rb:18: syntax error, unexpected backslash
+app/controllers/api/v1/user_controller.rb:18: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/controllers/api/v1/user_controller.rb:34: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/user_controller.rb:18: syntax error, unexpected backslash
+app/controllers/api/v1/user_controller.rb:18: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/controllers/api/v1/user_controller.rb:34: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:49:13 -0300
+  
+SyntaxError (/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:18: syntax error, unexpected ',', expecting `end'
+      csv << '\n' ,[user[:first_name], user[:las...
+                  ^
+/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:34: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/api/v1/user_controller.rb:18: syntax error, unexpected ',', expecting `end'
+app/controllers/api/v1/user_controller.rb:34: syntax error, unexpected `end', expecting end-of-input
+app/controllers/api/v1/user_controller.rb:18: syntax error, unexpected ',', expecting `end'
+app/controllers/api/v1/user_controller.rb:34: syntax error, unexpected `end', expecting end-of-input
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:49:52 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 5ms (Views: 0.2ms | Allocations: 215)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:50:02 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 6ms (Views: 0.3ms | Allocations: 194)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:50:12 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 500 Internal Server Error in 8ms (Allocations: 285)
+
+
+  
+CSV::MalformedCSVError (Unquoted fields do not allow new line <"\n"> in line 5.):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:50:48 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 13ms (Views: 0.2ms | Allocations: 591)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:50:57 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 6ms (Views: 0.1ms | Allocations: 195)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:51:11 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 8ms (Views: 0.1ms | Allocations: 194)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:51:43 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 5ms (Allocations: 195)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/controllers/api/v1/user_controller.rb:18:in `+'
+app/controllers/api/v1/user_controller.rb:18:in `block in create'
+app/controllers/api/v1/user_controller.rb:17:in `create'
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:52:12 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 4ms (Allocations: 195)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/controllers/api/v1/user_controller.rb:18:in `+'
+app/controllers/api/v1/user_controller.rb:18:in `block in create'
+app/controllers/api/v1/user_controller.rb:17:in `create'
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:52:59 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 4ms (Allocations: 195)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/controllers/api/v1/user_controller.rb:18:in `+'
+app/controllers/api/v1/user_controller.rb:18:in `block in create'
+app/controllers/api/v1/user_controller.rb:17:in `create'
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:53:39 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 7ms (Views: 0.3ms | Allocations: 223)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:54:06 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 5ms (Views: 0.3ms | Allocations: 222)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:54:52 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 5ms (Views: 0.2ms | Allocations: 222)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:55:01 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 500 Internal Server Error in 8ms (Allocations: 267)
+
+
+  
+CSV::MalformedCSVError (Illegal quoting in line 4.):
+  
+app/controllers/api/v1/user_controller.rb:5:in `index'
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:55:14 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 7ms (Views: 0.3ms | Allocations: 222)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:55:28 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 6ms (Views: 0.2ms | Allocations: 201)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:55:40 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 6ms (Views: 0.2ms | Allocations: 201)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:56:06 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 5ms (Views: 0.2ms | Allocations: 221)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:56:13 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 5ms (Views: 0.2ms | Allocations: 200)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:56:15 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 5ms (Views: 0.4ms | Allocations: 200)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:56:35 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 10ms (Views: 0.1ms | Allocations: 221)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:57:02 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 6ms (Views: 0.1ms | Allocations: 220)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:57:39 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 7ms (Views: 0.3ms | Allocations: 216)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:57:54 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 7ms (Views: 0.2ms | Allocations: 195)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:57:59 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 5ms (Views: 0.2ms | Allocations: 196)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:58:19 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"marcos", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 6ms (Views: 0.2ms | Allocations: 195)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:58:23 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 11ms (Views: 0.3ms | Allocations: 477)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:58:38 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"lucas", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 6ms (Views: 0.2ms | Allocations: 195)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:58:41 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 13ms (Views: 0.3ms | Allocations: 517)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:58:58 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 11ms (Views: 0.7ms | Allocations: 537)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:59:01 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"lucas", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 6ms (Views: 0.2ms | Allocations: 194)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:59:05 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 11ms (Views: 0.2ms | Allocations: 562)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:59:23 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"lucas", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 5ms (Views: 0.2ms | Allocations: 193)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:59:27 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 15ms (Views: 0.2ms | Allocations: 427)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 11:59:52 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 9ms (Views: 0.2ms | Allocations: 448)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 11:59:57 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"lucas", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 7ms (Views: 0.3ms | Allocations: 193)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 12:00:00 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 7ms (Views: 0.2ms | Allocations: 493)
+
+
+Started POST "/api/v1/user" for ::1 at 2022-04-19 12:00:07 -0300
+Processing by Api::V1::UserController#create as */*
+  Parameters: {"user"=>{"first_name"=>"lucas", "last_name"=>"coisa", "email"=>"marcos@gmial.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 5ms (Views: 0.1ms | Allocations: 193)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 12:00:11 -0300
+Processing by Api::V1::UserController#index as */*
+Completed 200 OK in 12ms (Views: 0.7ms | Allocations: 538)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 12:04:01 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 5ms (Views: 0.2ms | Allocations: 533)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 12:05:24 -0300
+  
+SyntaxError (/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:7: syntax error, unexpected '\n', expecting =>
+/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:36: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/api/v1/user_controller.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/api/v1/user_controller.rb:36: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/user_controller.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/api/v1/user_controller.rb:36: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 12:05:40 -0300
+  
+SyntaxError (/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:7: syntax error, unexpected ',', expecting =>
+    render json: {content,table}
+                         ^
+/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:36: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/api/v1/user_controller.rb:7: syntax error, unexpected ',', expecting =>
+app/controllers/api/v1/user_controller.rb:36: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/user_controller.rb:7: syntax error, unexpected ',', expecting =>
+app/controllers/api/v1/user_controller.rb:36: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/api/v1/user" for ::1 at 2022-04-19 12:05:47 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 6ms (Views: 0.2ms | Allocations: 570)
+
+
+Started GET "/api/v1/user" for ::1 at 2022-04-19 12:06:09 -0300
+Processing by Api::V1::UserController#index as HTML
+Completed 200 OK in 5ms (Views: 0.2ms | Allocations: 553)
+
+
+Started GET "/api/v1/user/vitor" for ::1 at 2022-04-19 12:08:18 -0300
+  
+SyntaxError (/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:14: syntax error, unexpected `end'
+    end
+    ^~~
+/mnt/c/Users/vitor/OneDrive/Área de Trabalho/AreaDeTrabalho/Estudos/Ruby/course/projects/2_RubyOnRails/3_api/user_api/app/controllers/api/v1/user_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/api/v1/user_controller.rb:14: syntax error, unexpected `end'
+app/controllers/api/v1/user_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/user_controller.rb:14: syntax error, unexpected `end'
+app/controllers/api/v1/user_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:09:53 -0300
+Processing by Api::V1::UserController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 6ms (Allocations: 266)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/user_controller.rb:14:in `block in show'
+app/controllers/api/v1/user_controller.rb:13:in `each'
+app/controllers/api/v1/user_controller.rb:13:in `show'
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:10:26 -0300
+Processing by Api::V1::UserController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 4ms (Allocations: 261)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/user_controller.rb:14:in `block in show'
+app/controllers/api/v1/user_controller.rb:13:in `each'
+app/controllers/api/v1/user_controller.rb:13:in `show'
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:11:07 -0300
+Processing by Api::V1::UserController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (Allocations: 266)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/api/v1/user_controller.rb:14:in `block in show'
+app/controllers/api/v1/user_controller.rb:13:in `each'
+app/controllers/api/v1/user_controller.rb:13:in `show'
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:11:26 -0300
+Processing by Api::V1::UserController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 58741ms (Allocations: 86204)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/api/v1/user_controller.rb:14:in `block in show'
+app/controllers/api/v1/user_controller.rb:13:in `each'
+app/controllers/api/v1/user_controller.rb:13:in `show'
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:12:29 -0300
+Processing by Api::V1::UserController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (Allocations: 266)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/user_controller.rb:13:in `block in show'
+app/controllers/api/v1/user_controller.rb:12:in `each'
+app/controllers/api/v1/user_controller.rb:12:in `show'
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:13:26 -0300
+Processing by Api::V1::UserController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 30086ms (Allocations: 70375)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/user_controller.rb:14:in `block in show'
+app/controllers/api/v1/user_controller.rb:12:in `each'
+app/controllers/api/v1/user_controller.rb:12:in `show'
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:14:01 -0300
+Processing by Api::V1::UserController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (Allocations: 135)
+
+
+  
+ArgumentError (unknown keyword: :header):
+  
+app/controllers/api/v1/user_controller.rb:11:in `show'
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:14:44 -0300
+Processing by Api::V1::UserController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5309ms (Allocations: 70809)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/user_controller.rb:14:in `block in show'
+app/controllers/api/v1/user_controller.rb:12:in `each'
+app/controllers/api/v1/user_controller.rb:12:in `show'
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:15:01 -0300
+Processing by Api::V1::UserController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 35976ms (Allocations: 63549)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/user_controller.rb:14:in `block in show'
+app/controllers/api/v1/user_controller.rb:12:in `each'
+app/controllers/api/v1/user_controller.rb:12:in `show'
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:31:48 -0300
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:32:15 -0300
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:33:15 -0300
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/user/1" for ::1 at 2022-04-19 12:54:08 -0300
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/user" for ::1 at 2022-04-19 12:55:24 -0300
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/user" for ::1 at 2022-04-19 12:56:34 -0300
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/user" for ::1 at 2022-04-19 12:58:54 -0300
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
